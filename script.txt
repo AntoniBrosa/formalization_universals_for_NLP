@@ -1,0 +1,660 @@
+# Formalizations from Document
+
+## Universal 1
+
+
+%1-SVO
+pattern {V [upos=VERB]; V -[subj]-> S;
+S [upos=PROPN|NOUN]; V -[comp:obj]-> O;
+O [upos=PROPN|NOUN];V >> S; S << O; V << O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%1-SOV
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN]; V -[comp:obj]-> O; O [upos=PROPN|NOUN];V >> S; S << O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%1-VSO
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN]; V -[comp:obj]-> O; O [upos=PROPN|NOUN];V << S; S << O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%1-VOS
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN]; V -[comp:obj]-> O; O [upos=PROPN|NOUN];V << S; S >> O; V<<O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%1-OSV
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN]; V -[comp:obj]-> O; O [upos=PROPN|NOUN];V >> S; S >> O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%1-OVS
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN]; V -[comp:obj]-> O; O [upos=PROPN|NOUN];V << S; S >> O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%1-SVOpn
+pattern {V [upos=VERB]; V -[subj]-> S;
+S [upos=PRON]; V -[comp:obj]-> O;
+O [upos=PRON];V >> S; S << O; V << O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%1-SOVpn
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PRON]; V -[comp:obj]-> O; O [upos=PRON];V >> S; S << O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%1-VSOpn
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PRON]; V -[comp:obj]-> O; O [upos=PRON];V << S; S << O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%1-VOSpn
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PRON]; V -[comp:obj]-> O; O [upos=PRON];V << S; S >> O; V<<O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%1-OSVpn
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PRON]; V -[comp:obj]-> O; O [upos=PRON];V >> S; S >> O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%1-OVSpn
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PRON]; V -[comp:obj]-> O; O [upos=PRON];V << S; S >> O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%1-SVOpnN
+pattern {V [upos=VERB]; V -[subj]-> S;
+S [upos=PROPN|NOUN|PRON]; V -[comp:obj]-> O;
+O [upos=PROPN|NOUN|PRON];V >> S; S << O; V << O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%1-SOVpnN
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN|PRON]; V -[comp:obj]-> O; O [upos=PROPN|NOUN|PRON];V >> S; S << O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%1-VSOpnN
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN|PRON]; V -[comp:obj]-> O; O [upos=PROPN|NOUN|PRON];V << S; S << O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%1-VOSpnN
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN|PRON]; V -[comp:obj]-> O; O [upos=PROPN|NOUN|PRON];V << S; S >> O; V<<O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%1-OSVpnN
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN|PRON]; V -[comp:obj]-> O; O [upos=PROPN|NOUN|PRON];V >> S; S >> O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%1-OVSpnN
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN|PRON]; V -[comp:obj]-> O; O [upos=PROPN|NOUN|PRON];V << S; S >> O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%1-SVOany
+pattern {V [upos=VERB]; V -[subj]-> S;
+S [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM]; V -[comp:obj]-> O;
+O [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM];V >> S; S << O; V << O}
+
+
+%1-SOVany
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM]; V -[comp:obj]-> O; O [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM];V >> S; S << O; V>>O}
+
+
+%1-VSOany
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM]; V -[comp:obj]-> O; O [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM];V << S; S << O}
+
+
+%1-VOSany
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM]; V -[comp:obj]-> O; O [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM];V << S; S >> O; V<<O}
+
+
+%1-OSVany
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM]; V -[comp:obj]-> O; O [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM];V >> S; S >> O; V>>O}
+
+
+%1-OVSany
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM]; V -[comp:obj]-> O; O [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM];V << S; S >> O; V>>O}
+
+
+%1-SV
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN]; V >> S}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%1-VS
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN]; V << S}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%1-OV
+pattern {V [upos=VERB]; V -[subj]-> O; O [upos=PROPN|NOUN]; V >> O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%1-VO
+pattern {V [upos=VERB]; V -[subj]-> O; O [upos=PROPN|NOUN]; V << O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+## Universal 3
+
+%3-SVO
+pattern {V [upos=VERB]; V -[subj]-> S;
+S [upos=PROPN|NOUN]; V -[comp:obj]-> O;
+O [upos=PROPN|NOUN];V >> S; S << O; V << O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%3-SOV
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN]; V -[comp:obj]-> O; O [upos=PROPN|NOUN];V >> S; S << O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%3-VSO
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN]; V -[comp:obj]-> O; O [upos=PROPN|NOUN];V << S; S << O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%3-VOS
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN]; V -[comp:obj]-> O; O [upos=PROPN|NOUN];V << S; S >> O; V<<O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%3-OSV
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN]; V -[comp:obj]-> O; O [upos=PROPN|NOUN];V >> S; S >> O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%3-OVS
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN]; V -[comp:obj]-> O; O [upos=PROPN|NOUN];V << S; S >> O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%3-SVOpn
+pattern {V [upos=VERB]; V -[subj]-> S;
+S [upos=PRON]; V -[comp:obj]-> O;
+O [upos=PRON];V >> S; S << O; V << O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%3-SOVpn
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PRON]; V -[comp:obj]-> O; O [upos=PRON];V >> S; S << O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%3-VSOpn
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PRON]; V -[comp:obj]-> O; O [upos=PRON];V << S; S << O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%3-VOSpn
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PRON]; V -[comp:obj]-> O; O [upos=PRON];V << S; S >> O; V<<O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%3-OSVpn
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PRON]; V -[comp:obj]-> O; O [upos=PRON];V >> S; S >> O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%3-OVSpn
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PRON]; V -[comp:obj]-> O; O [upos=PRON];V << S; S >> O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%3-SVOpnN
+pattern {V [upos=VERB]; V -[subj]-> S;
+S [upos=PROPN|NOUN|PRON]; V -[comp:obj]-> O;
+O [upos=PROPN|NOUN|PRON];V >> S; S << O; V << O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%3-SOVpnN
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN|PRON]; V -[comp:obj]-> O; O [upos=PROPN|NOUN|PRON];V >> S; S << O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%3-VSOpnN
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN|PRON]; V -[comp:obj]-> O; O [upos=PROPN|NOUN|PRON];V << S; S << O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%3-VOSpnN
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN|PRON]; V -[comp:obj]-> O; O [upos=PROPN|NOUN|PRON];V << S; S >> O; V<<O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%3-OSVpnN
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN|PRON]; V -[comp:obj]-> O; O [upos=PROPN|NOUN|PRON];V >> S; S >> O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%3-OVSpnN
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN|PRON]; V -[comp:obj]-> O; O [upos=PROPN|NOUN|PRON];V << S; S >> O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%3-SVOany
+pattern {V [upos=VERB]; V -[subj]-> S;
+S [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM]; V -[comp:obj]-> O;
+O [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM];V >> S; S << O; V << O}
+
+
+%3-SOVany
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM]; V -[comp:obj]-> O; O [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM];V >> S; S << O; V>>O}
+
+
+%3-VSOany
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM]; V -[comp:obj]-> O; O [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM];V << S; S << O}
+
+
+%3-VOSany
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM]; V -[comp:obj]-> O; O [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM];V << S; S >> O; V<<O}
+
+
+%3-OSVany
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM]; V -[comp:obj]-> O; O [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM];V >> S; S >> O; V>>O}
+
+
+%3-OVSany
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM]; V -[comp:obj]-> O; O [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM];V << S; S >> O; V>>O}
+
+
+%3-SV
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN]; V >> S}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%3-VS
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN]; V << S}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%3-OV
+pattern {V [upos=VERB]; V -[subj]-> O; O [upos=PROPN|NOUN]; V >> O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%3-VO
+pattern {V [upos=VERB]; V -[subj]-> O; O [upos=PROPN|NOUN]; V << O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%3-Prep-N
+pattern {ADP [upos=ADP]; ADP -[comp:obj]-> N; N [upos=NOUN|PROPN]; ADP<<N}
+
+
+%3-Post-N
+pattern {ADP [upos=ADP]; ADP -[comp:obj]-> N; N [upos=NOUN|PROPN]; ADP>>N}
+
+
+%3-Prep-PN
+pattern {ADP [upos=ADP]; ADP -[comp:obj]-> PN; PN[upos=PRON]; ADP<<PN}
+
+
+%3-Post-PN
+pattern {ADP [upos=ADP]; ADP -[comp:obj]-> PN; PN[upos=PRON]; ADP>>PN}
+
+
+%3-Prep-V
+pattern {ADP [upos=ADP]; ADP -[comp:obj]-> V; V[upos=VERB]; ADP<<V}
+
+
+%3-Post-V
+pattern {ADP [upos=ADP]; ADP -[comp:obj]-> V; V[upos=VERB]; ADP>>V}
+
+
+%3-Vhead-ADP
+pattern {ADP [upos=ADP]; V -[comp:obj]-> ADP; V[upos=VERB]; ADP>>V}
+
+
+%3-ADP-Vhead
+pattern {ADP [upos=ADP]; V -[comp:obj]-> ADP; V[upos=VERB]; ADP<<V}
+
+
+%3-Prep-ANY
+pattern {ADP [upos=ADP]; ADP -[comp:obj]-> ANY; ANY [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM]; ADP<<ANY}
+
+
+%3-Post-ANY
+pattern {ADP [upos=ADP]; ADP -[comp:obj]-> ANY; ANY [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM]; ADP>>ANY}
+
+## Universal 6
+
+%6-SVO
+pattern {V [upos=VERB]; V -[subj]-> S;
+S [upos=PROPN|NOUN]; V -[comp:obj]-> O;
+O [upos=PROPN|NOUN];V >> S; S << O; V << O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%6-SOV
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN]; V -[comp:obj]-> O; O [upos=PROPN|NOUN];V >> S; S << O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%6-VSO
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN]; V -[comp:obj]-> O; O [upos=PROPN|NOUN];V << S; S << O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%6-VOS
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN]; V -[comp:obj]-> O; O [upos=PROPN|NOUN];V << S; S >> O; V<<O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%6-OSV
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN]; V -[comp:obj]-> O; O [upos=PROPN|NOUN];V >> S; S >> O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%6-OVS
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN]; V -[comp:obj]-> O; O [upos=PROPN|NOUN];V << S; S >> O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%6-SVOpn
+pattern {V [upos=VERB]; V -[subj]-> S;
+S [upos=PRON]; V -[comp:obj]-> O;
+O [upos=PRON];V >> S; S << O; V << O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%6-SOVpn
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PRON]; V -[comp:obj]-> O; O [upos=PRON];V >> S; S << O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%6-VSOpn
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PRON]; V -[comp:obj]-> O; O [upos=PRON];V << S; S << O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%6-VOSpn
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PRON]; V -[comp:obj]-> O; O [upos=PRON];V << S; S >> O; V<<O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%6-OSVpn
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PRON]; V -[comp:obj]-> O; O [upos=PRON];V >> S; S >> O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%6-OVSpn
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PRON]; V -[comp:obj]-> O; O [upos=PRON];V << S; S >> O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%6-SVOpnN
+pattern {V [upos=VERB]; V -[subj]-> S;
+S [upos=PROPN|NOUN|PRON]; V -[comp:obj]-> O;
+O [upos=PROPN|NOUN|PRON];V >> S; S << O; V << O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%6-SOVpnN
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN|PRON]; V -[comp:obj]-> O; O [upos=PROPN|NOUN|PRON];V >> S; S << O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%6-VSOpnN
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN|PRON]; V -[comp:obj]-> O; O [upos=PROPN|NOUN|PRON];V << S; S << O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%6-VOSpnN
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN|PRON]; V -[comp:obj]-> O; O [upos=PROPN|NOUN|PRON];V << S; S >> O; V<<O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%6-OSVpnN
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN|PRON]; V -[comp:obj]-> O; O [upos=PROPN|NOUN|PRON];V >> S; S >> O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%6-OVSpnN
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN|PRON]; V -[comp:obj]-> O; O [upos=PROPN|NOUN|PRON];V << S; S >> O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%6-SVOany
+pattern {V [upos=VERB]; V -[subj]-> S;
+S [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM]; V -[comp:obj]-> O;
+O [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM];V >> S; S << O; V << O}
+
+
+%6-SOVany
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM]; V -[comp:obj]-> O; O [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM];V >> S; S << O; V>>O}
+
+
+%6-VSOany
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM]; V -[comp:obj]-> O; O [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM];V << S; S << O}
+
+
+%6-VOSany
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM]; V -[comp:obj]-> O; O [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM];V << S; S >> O; V<<O}
+
+
+%6-OSVany
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM]; V -[comp:obj]-> O; O [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM];V >> S; S >> O; V>>O}
+
+
+%6-OVSany
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM]; V -[comp:obj]-> O; O [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM];V << S; S >> O; V>>O}
+
+
+%6-SV
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN]; V >> S}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%6-VS
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN]; V << S}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%6-OV
+pattern {V [upos=VERB]; V -[subj]-> O; O [upos=PROPN|NOUN]; V >> O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%6-VO
+pattern {V [upos=VERB]; V -[subj]-> O; O [upos=PROPN|NOUN]; V << O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+# Universal 7 Formalizations
+
+%7-SVO
+pattern {V [upos=VERB]; V -[subj]-> S;
+S [upos=PROPN|NOUN]; V -[comp:obj]-> O;
+O [upos=PROPN|NOUN];V >> S; S << O; V << O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%7-SOV
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN]; V -[comp:obj]-> O; O [upos=PROPN|NOUN];V >> S; S << O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%7-VSO
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN]; V -[comp:obj]-> O; O [upos=PROPN|NOUN];V << S; S << O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%7-VOS
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN]; V -[comp:obj]-> O; O [upos=PROPN|NOUN];V << S; S >> O; V<<O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%7-OSV
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN]; V -[comp:obj]-> O; O [upos=PROPN|NOUN];V >> S; S >> O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%7-OVS
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN]; V -[comp:obj]-> O; O [upos=PROPN|NOUN];V << S; S >> O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%7-SVOpn
+pattern {V [upos=VERB]; V -[subj]-> S;
+S [upos=PRON]; V -[comp:obj]-> O;
+O [upos=PRON];V >> S; S << O; V << O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%7-SOVpn
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PRON]; V -[comp:obj]-> O; O [upos=PRON];V >> S; S << O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%7-VSOpn
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PRON]; V -[comp:obj]-> O; O [upos=PRON];V << S; S << O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%7-VOSpn
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PRON]; V -[comp:obj]-> O; O [upos=PRON];V << S; S >> O; V<<O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%7-OSVpn
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PRON]; V -[comp:obj]-> O; O [upos=PRON];V >> S; S >> O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%7-OVSpn
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PRON]; V -[comp:obj]-> O; O [upos=PRON];V << S; S >> O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%7-SVOpnN
+pattern {V [upos=VERB]; V -[subj]-> S;
+S [upos=PROPN|NOUN|PRON]; V -[comp:obj]-> O;
+O [upos=PROPN|NOUN|PRON];V >> S; S << O; V << O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%7-SOVpnN
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN|PRON]; V -[comp:obj]-> O; O [upos=PROPN|NOUN|PRON];V >> S; S << O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%7-VSOpnN
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN|PRON]; V -[comp:obj]-> O; O [upos=PROPN|NOUN|PRON];V << S; S << O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%7-VOSpnN
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN|PRON]; V -[comp:obj]-> O; O [upos=PROPN|NOUN|PRON];V << S; S >> O; V<<O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%7-OSVpnN
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN|PRON]; V -[comp:obj]-> O; O [upos=PROPN|NOUN|PRON];V >> S; S >> O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%7-OVSpnN
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN|PRON]; V -[comp:obj]-> O; O [upos=PROPN|NOUN|PRON];V << S; S >> O; V>>O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%7-SVOany
+pattern {V [upos=VERB]; V -[subj]-> S;
+S [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM]; V -[comp:obj]-> O;
+O [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM];V >> S; S << O; V << O}
+
+
+%7-SOVany
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM]; V -[comp:obj]-> O; O [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM];V >> S; S << O; V>>O}
+
+
+%7-VSOany
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM]; V -[comp:obj]-> O; O [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM];V << S; S << O}
+
+
+%7-VOSany
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM]; V -[comp:obj]-> O; O [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM];V << S; S >> O; V<<O}
+
+
+%7-OSVany
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM]; V -[comp:obj]-> O; O [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM];V >> S; S >> O; V>>O}
+
+
+%7-OVSany
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM]; V -[comp:obj]-> O; O [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM];V << S; S >> O; V>>O}
+
+
+%7-SV
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN]; V >> S}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%7-VS
+pattern {V [upos=VERB]; V -[subj]-> S; S [upos=PROPN|NOUN]; V << S}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%7-OV
+pattern {V [upos=VERB]; V -[subj]-> O; O [upos=PROPN|NOUN]; V >> O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+%7-VO
+pattern {V [upos=VERB]; V -[subj]-> O; O [upos=PROPN|NOUN]; V << O}
+without {V -[punct]-> P; P [lemma="?"|"!"]}
+
+
+### 7-ADV-beforeV
+%7-ADV-beforeV
+pattern {V [upos=VERB];
+V -[mod]-> ADV; ADV [upos=ADV];
+V>>ADV}
+
+### 7-ADV-afterV
+%7-ADV-afterV
+pattern {V [upos=VERB];
+V -[mod]-> ADV; ADV [upos=ADV];
+V<<ADV}
+
+### 7-ADV-beforeADJ
+%7-ADV-beforeADJ
+pattern {ADJ [upos=ADJ];
+ADJ -[mod]-> ADV; ADV [upos=ADV];
+ADJ>>ADV}
+
+### 7-ADV-afterADJ
+%7-ADV-afterADJ
+pattern {ADJ [upos=ADJ];
+ADJ -[mod]-> ADV; ADV [upos=ADV];
+ADJ<<ADV}
+
+### 7-ADV-beforeANY
+%7-ADV-beforeANY
+pattern {ANY [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM];
+ANY -[mod]-> ADV; ADV [upos=ADV];
+ANY>>ADV}
+
+### 7-ADV-afterANY
+%7-ADV-afterANY
+pattern {ANY [upos=ADJ|ADV|INTJ|NOUN|PROPN|VERB|ADP|AUX|CCONJ|DET|NUM|PART|PRON|SCONJ|SYM];
+ANY -[mod]-> ADV; ADV [upos=ADV];
+ANY<<ADV}
+
+### 7-ADVcl-before
+%7-ADVcl-before
+pattern {SCONJ[upos=SCONJ]; VIF [upos=VERB|AUX]; VMAIN [upos=VERB|AUX]; VMAIN-[mod]->SCONJ; SCONJ-[comp:obj]->VIF; SCONJ<<VMAIN}
+
+### 7-ADVcl-after
+%7-ADVcl-after
+pattern {SCONJ[upos=SCONJ]; VIF [upos=VERB|AUX]; VMAIN [upos=VERB|AUX]; VMAIN-[mod]->SCONJ; SCONJ-[comp:obj]->VIF; SCONJ>>VMAIN}
