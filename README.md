@@ -118,7 +118,7 @@ FILE OVERVIEW
 2. File list:
 
 
-	File name: Script.json
+	File name: Script.txt
 	Description: The file contains all the formalisations that have been proposed in order to be able to carry out the checks of the doctoral thesis. The file is a script ordered by universal and where other more precise or alternative linguistic formalisations related to the analysed universal are also shown. The application of this script on the first 1000 treebanks of all the Universal Dependencies corpora (2.11) is what guides the results of the thesis.     
 
 
@@ -126,7 +126,7 @@ FILE OVERVIEW
 
 
 
-4. File format: .json
+4. File format: .txt
 
 
 
@@ -142,7 +142,7 @@ SPECIFIC INFORMATION FOR TABULAR ATA
 
 
 
-2. Number of rows and columns:.
+2. Number of rows and columns:631/1
 
 
 3. Variables list: Not applicable.
